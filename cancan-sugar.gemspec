@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 #
-# CanCanSugar v0.1.1
+# CanCanSugar
 #
 # Syntax sugar for gem CanCan. Inspired by gem Padrino-CanCan.
 #
@@ -29,5 +29,4 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   s.add_development_dependency('cancan')
-  s.add_development_dependency('rake')
 end
