@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 #
-# CanCanSugar v0.1.1
+# CanCanSugar
 #
 # Syntax sugar for gem CanCan. Inspired by gem Padrino-CanCan.
 #

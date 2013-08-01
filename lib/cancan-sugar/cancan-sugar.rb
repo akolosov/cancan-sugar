@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 #
-# CanCanSugar v0.1.1
+# CanCanSugar
 #
 # Syntax sugar for gem CanCan. Inspired by gem Padrino-CanCan.
 #
@@ -14,6 +14,8 @@ module CanCan
   module Ability
 
     def permissions_for user, roles, &block
+      raise ArgumentError.new('No block of ability definitions given') unless block_given?
+
       if roles.is_a? Array
         roles.each do |role|
           set_premissions user, role, &block
@@ -34,7 +36,7 @@ module CanCan
     private
 
     def set_premissions user, role, &block
-      block.call if user.has_role? role
+      block.call if user.has_role? role and block_given?
     end
 
   end
