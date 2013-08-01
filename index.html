@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <title>Cancan-sugar by akolosov</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Cancan-sugar</h1>
+        <h2>Syntax sugar for gem CanCan. Inspired by gem Padrino-CanCan.</h2>
+
+        <section id="downloads">
+          <a href="https://github.com/akolosov/cancan-sugar/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/akolosov/cancan-sugar/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/akolosov/cancan-sugar" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1>
+<a name="cancansugar" class="anchor" href="#cancansugar"><span class="octicon octicon-link"></span></a>CanCanSugar</h1>
+
+<p>Syntax sugar for gem CanCan. Inspired by gem Padrino-CanCan.</p>
+
+<h1>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h1>
+
+<pre><code>$ gem install cancan-sugar
+</code></pre>
+
+<h1>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h1>
+
+<pre><code>gem "cancan-sugar"
+
+
+class Ability
+  include CanCan::Ability
+
+  def initialize(user)
+    user ||= User.new
+
+    permissions_for user, as: :admin do
+      can :manage, :all
+    end
+
+    permissions_for user, as: [:manager, :user] do
+      can :update, User, id: user.id
+      can :read, Document
+      can :update, Document, user_id: user.id
+      can :create, Document
+    end
+
+    permissions_for user, as: :manager do
+      can :comment, Document
+      can :create, Comment
+      can :create, DocumentComment
+      can :create, Incedent
+      can :update, Incedent, initiator_id: user.id
+    end
+
+  end
+end
+</code></pre>
+
+<h1>
+<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h1>
+
+<p>(C)opyLeft &amp; (C)odeRight Alexey Kolosov aka mr.huNTer <a href="mailto:alexey.kolosov@gmail.com">alexey.kolosov@gmail.com</a></p>
+
+<p>"Typographica" released without warranty under the terms of the Artistic License 2.0
+<a href="http://www.opensource.org/licenses/artistic-license-2.0">http://www.opensource.org/licenses/artistic-license-2.0</a></p>
+      </section>
+    </div>
+
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("cancan ruby rails");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
