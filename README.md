@@ -14,7 +14,33 @@ Syntax sugar for gem CanCan. Inspired by gem Padrino-CanCan.
     gem "cancan-sugar"
 
 
-# Result
+    class Ability
+      include CanCan::Ability
+    
+      def initialize(user)
+        user ||= User.new
+    
+        permissions_for user, as: :admin do
+          can :manage, :all
+        end
+    
+        permissions_for user, as: [:manager, :user] do
+          can :update, User, id: user.id
+          can :read, Document
+          can :update, Document, user_id: user.id
+          can :create, Document
+        end
+        
+        permissions_for user, as: :manager do
+          can :comment, Document
+          can :create, Comment
+          can :create, DocumentComment
+          can :create, Incedent
+          can :update, Incedent, initiator_id: user.id
+        end
+    
+      end
+    end
 
 
 
