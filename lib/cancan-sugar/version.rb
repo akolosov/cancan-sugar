@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 #
-# CanCanSugar v0.1.0
+# CanCanSugar v0.1.1
 #
 # Syntax sugar for gem CanCan. Inspired by gem Padrino-CanCan.
 #
@@ -14,7 +14,7 @@ module CanCanSugar
   module VERSION
     MAJOR = 0
     MINOR = 1
-    PATCH = 0
+    PATCH = 1
 
     STRING = [MAJOR, MINOR, PATCH].join('.')
   end
