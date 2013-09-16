@@ -10,11 +10,11 @@ Syntax sugar for gem CanCan. Inspired by gem Padrino-CanCan.
 
     $ gem install cancan-sugar
 
-
-# Usage
+# Include in Gemfile
 
     gem "cancan-sugar"
 
+# Usage
 
     class Ability
       include CanCan::Ability
