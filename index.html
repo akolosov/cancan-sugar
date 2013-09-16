@@ -28,7 +28,9 @@
         </ul>
       </header>
       <section>
-        <h1>
+        <p><a href="http://badge.fury.io/rb/cancan-sugar"><img src="https://badge.fury.io/rb/cancan-sugar.png" alt="Gem Version"></a></p>
+
+<h1>
 <a name="cancan-sugar" class="anchor" href="#cancan-sugar"><span class="octicon octicon-link"></span></a>CanCan-Sugar</h1>
 
 <p>Syntax sugar for gem CanCan. Inspired by gem Padrino-CanCan.</p>
@@ -40,12 +42,15 @@
 </code></pre>
 
 <h1>
-<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h1>
+<a name="gemfile" class="anchor" href="#gemfile"><span class="octicon octicon-link"></span></a>Gemfile</h1>
 
 <pre><code>gem "cancan-sugar"
+</code></pre>
 
+<h1>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h1>
 
-class Ability
+<pre><code>class Ability
   include CanCan::Ability
 
   def initialize(user)
