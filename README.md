@@ -10,7 +10,7 @@ Syntax sugar for gem CanCan. Inspired by gem Padrino-CanCan.
 
     $ gem install cancan-sugar
 
-# Include in Gemfile
+# Gemfile
 
     gem "cancan-sugar"
 
