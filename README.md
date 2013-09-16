@@ -1,3 +1,5 @@
+[![Gem Version](https://badge.fury.io/rb/cancan-sugar.png)](http://badge.fury.io/rb/cancan-sugar)
+
 CanCan-Sugar
 ============
 
